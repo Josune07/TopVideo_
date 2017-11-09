@@ -1,0 +1,17 @@
+{# src/Blogger/BlogBundle/Resources/views/Blog/list.html.twig #}
+{% extends "::base.html.twig" %}
+{% block title %}Lista de Videos{% endblock %}
+
+{% block body %}
+	<h1>Lista de Videos</h1>
+	<ul>
+		{% for video in videos %}
+		<li>
+			<a href="{{ path('blogger_blog_show', {'id': video.id}) }}">
+				{{ video.titulo }}
+				
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
