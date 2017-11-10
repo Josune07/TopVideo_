@@ -1,12 +1,13 @@
-blogger_blog_homepage:
-    path:     /
-    defaults: { _controller: BloggerBlogBundle:Default:index }
-    
 blogger_blog_list:
-    path: /blog
+    path: /
     defaults: { _controller: BloggerBlogBundle:Blog:list }
 
 blogger_blog_show:
-    path: /blog/show/{id}
+    path: /show/{id}
     defaults: { _controller: BloggerBlogBundle:Blog:show }
+
+blogger_blog_contact:
+    path:  /contact
+    defaults: { _controller: BloggerBlogBundle:Blog:contact }
+
 

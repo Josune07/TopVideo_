@@ -23,7 +23,7 @@ body { background-color:#D4E6F1;line-height: 1;font-family: 'Poiret One', sans-s
 .main-col h1,
 .main-col h2
     {  margin-right: 135px ;line-height: 1.2em; font-size: 40px; margin-bottom: 10px; font-weight: normal; color: #5D6D7E  ; }
-.main-col p { line-height: 1.5em; margin-bottom: 20px; }
+.main-col p { font-size: 15px; line-height: 1.5em; margin-bottom: 20px; }
 #footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
 
 

@@ -1,0 +1,59 @@
+<?php
+
+namespace Blogger\BlogBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+
+/**
+ * Blogger\BlogBundle\Entity\Comentario
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Blogger\BlogBundle\Entity\ComentarioRepository")
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Comentario 
+{
+    //Listamos los atributos
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $user;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $comentario;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $approved;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Video", inversedBy="comentario")
+     * @ORM\JoinColumn(name="video_id", referencedColumnName="id")
+     */
+    private $video;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
+
+    }

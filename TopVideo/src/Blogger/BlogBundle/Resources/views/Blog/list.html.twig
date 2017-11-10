@@ -3,15 +3,24 @@
 {% block title %}Lista de Videos{% endblock %}
 
 {% block body %}
-	<h1>Lista de Videos</h1>
-	<ul>
-		{% for video in videos %}
-		<li>
-						<a href="{{ path('blogger_blog_show', {'id': video.id}) }}">
-							{{ video.titulo }}
-				
-			</a>
-		</li>
-		{% endfor %}
-	</ul>
+    {% for video in videos %}
+        <article class="video">
+            <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+            <header>
+                <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+                <p>{{ video.cantante }}</p>
+            </header>
+
+            <div class="snippet">
+                <p>{{ video.letra(200) }}</p>
+                <p class="continue"><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">Seguir leyendo...</a></p>
+            </div>
+
+            <footer class="meta">
+                <p>Comentarios: -</p>
+            </footer>
+        </article>
+    {% else %}
+        <p>No hay entradas en este blog</p>
+    {% endfor %}
 {% endblock %}
