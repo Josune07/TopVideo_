@@ -1,0 +1,24 @@
+{# src/Blogger/BlogBundle/Resources/views/Blog/list.html.twig #}
+{% extends "::layout.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+
+	
+{% block body %}
+	<h1>Informacion sobre el video</h1>
+	<ul>
+		
+		<li>{{ video.titulo }}</li>
+		<li>{{ video.cantante }}</li>
+		<li>{{ video.date|date('d-m-Y') }}</li>
+		
+	
+
+{% endblock %}
+
+	
+			
