@@ -26,9 +26,11 @@ class BlogController extends Controller
 
 		$comentarios = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Comentario')->getComentariosForVideo($video->getId());
 
+		$categoria = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->find($video->getCategoria());
+
 	
 
-	return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('video' => $video, 'comentarios' => $comentarios));
+	return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('video' => $video, 'comentarios' => $comentarios,'categoria' => $categoria ));
 	}
 
 

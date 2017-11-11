@@ -31,7 +31,7 @@ class Categoria
     /**
  * @ORM\OneToMany(targetEntity="Video", mappedBy="Categoria")
  */
-    private $videos;
+    protected $videos;
 
 
     /**

@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategoriaRepository extends EntityRepository
 {
+
+	/**public function getCategoriaForVideo($CategoriaId)
+	*{
+	*	$qp = $this->createQueryBuilder('c')->select('c')->where('c.id = :categoria_id')-> *setParameter('categoria_id', $CategoriaId);
+*
+*		return $qp->getQuery()->getResult();}
+*/	
+
+
 }

@@ -66,6 +66,11 @@ class Video
  */
     private $megusta;
 
+    /**
+    * @ORM\Column(type="text")
+    */
+    protected $link;
+
 
 
 
@@ -328,5 +333,28 @@ class Video
         $this->categoria = $categoria;
 
         return $this;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     * @return Video
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string 
+     */
+    public function getLink()
+    {
+        return $this->link;
     }
 }

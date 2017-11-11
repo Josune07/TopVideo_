@@ -12,10 +12,15 @@
 	<h1>Informacion sobre el video</h1>
 	<ul>
 		
-		<li>{{ video.titulo }}</li>
-		<li>{{ video.cantante }}</li>
-		<li>{{ video.date|date('d-m-Y') }}</li>
+		<li><h2>{{ video.titulo }}</h2></li>
+		<li><h2>{{ video.cantante }}</h2></li>
+		<li><h2>{{ video.date|date('d-m-Y') }}</h2></li>
+
 		<li>{{ video.letra}}</li>
+
+		<li><h2>{{ categoria.nombre }}</h2></li>
+
+		<<iframe width="560" height="315" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
 
 
 {% endblock %}
