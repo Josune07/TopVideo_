@@ -34,4 +34,37 @@ class MeGusta
 
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set video
+     *
+     * @param \Blogger\BlogBundle\Entity\Video $video
+     * @return MeGusta
+     */
+    public function setVideo(\Blogger\BlogBundle\Entity\Video $video = null)
+    {
+        $this->video = $video;
+
+        return $this;
+    }
+
+    /**
+     * Get video
+     *
+     * @return \Blogger\BlogBundle\Entity\Video 
+     */
+    public function getVideo()
+    {
+        return $this->video;
+    }
 }

@@ -39,12 +39,11 @@ class Video
     */
     protected $letra;
 
-
-       /**
-
-     * @ORM\OneToMany(targetEntity="Categoria", mappedBy="Video")
-
+  /**
+     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="Videos")
+     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
+
      private $categoria;
 
       /**
@@ -316,5 +315,18 @@ class Video
     public function getMegusta()
     {
         return $this->megusta;
+    }
+
+    /**
+     * Set categoria
+     *
+     * @param \Blogger\BlogBundle\Entity\Categoria $categoria
+     * @return Video
+     */
+    public function setCategoria(\Blogger\BlogBundle\Entity\Categoria $categoria = null)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
     }
 }

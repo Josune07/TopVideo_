@@ -39,12 +39,11 @@ class Video
     */
     protected $letra;
 
-
-       /**
-
-     * @ORM\OneToMany(targetEntity="Categoria", mappedBy="Video")
-
+  /**
+     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="Videos")
+     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
+
      private $categoria;
 
       /**
@@ -250,5 +249,71 @@ class Video
     public function getPlataforma()
     {
         return $this->plataforma;
+    }
+
+    /**
+     * Add comentario
+     *
+     * @param \Blogger\BlogBundle\Entity\Comentario $comentario
+     * @return Video
+     */
+    public function addComentario(\Blogger\BlogBundle\Entity\Comentario $comentario)
+    {
+        $this->comentario[] = $comentario;
+
+        return $this;
+    }
+
+    /**
+     * Remove comentario
+     *
+     * @param \Blogger\BlogBundle\Entity\Comentario $comentario
+     */
+    public function removeComentario(\Blogger\BlogBundle\Entity\Comentario $comentario)
+    {
+        $this->comentario->removeElement($comentario);
+    }
+
+    /**
+     * Get comentario
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComentario()
+    {
+        return $this->comentario;
+    }
+
+    /**
+     * Add megusta
+     *
+     * @param \Blogger\BlogBundle\Entity\Megusta $megusta
+     * @return Video
+     */
+    public function addMegustum(\Blogger\BlogBundle\Entity\MeGusta $megusta)
+    {
+        $this->megusta[] = $megusta;
+
+        return $this;
+    }
+
+    /**
+     * Remove megusta
+     *
+     * @param \Blogger\BlogBundle\Entity\Megusta $megusta
+     */
+    public function removeMegustum(\Blogger\BlogBundle\Entity\MeGusta $megusta)
+    {
+        $this->megusta->removeElement($megusta);
+    }
+
+    /**
+     * Get megusta
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMegusta()
+    {
+        return $this->megusta;
     }
 }
