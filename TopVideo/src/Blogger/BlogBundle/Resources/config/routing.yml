@@ -11,3 +11,7 @@ blogger_blog_contact:
     defaults: { _controller: BloggerBlogBundle:Blog:contact }
 
 
+blogger_blog_init:
+    path:  /init
+    defaults: { _controller: BloggerBlogBundle:Blog:inicio }
+

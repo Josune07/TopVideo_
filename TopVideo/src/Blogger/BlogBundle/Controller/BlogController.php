@@ -40,5 +40,19 @@ class BlogController extends Controller
 	return $this->render('BloggerBlogBundle:Blog:contact.html.twig');
 	}
 
+
+public function InicioAction()
+	{
+		
+	$categorias = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->getAllCategorias();
+
+	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
+
+
+	
+	return $this->render('BloggerBlogBundle:Blog:inicio.html.twig', array('categorias' => $categorias, 'videos' => $videos));
+
+
+	}
 }
 ?>

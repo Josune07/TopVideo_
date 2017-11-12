@@ -19,6 +19,15 @@ class CategoriaRepository extends EntityRepository
 *
 *		return $qp->getQuery()->getResult();}
 */	
+public function getAllCategorias($limit = null)
+{
+	$qp = $this->createQueryBuilder('c')->select('c')->addOrderBy('c.nombre', 'DESC');
+
+	if (false === is_null($limit))
+		$qp->setMaxResults($limit);
+
+	return $qp->getQuery()->getResult();
+}
 
 
 }

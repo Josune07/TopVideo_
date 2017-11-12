@@ -1,0 +1,27 @@
+{# src/Blogger/BlogBundle/Resources/views/Blog/inicio.html.twig #}
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+
+ {% for categoria in categorias %}
+        <article class="categoria">
+           
+            <header>
+            	<h4>{{categoria.nombre}}</h4>
+            	{% for video in videos %}
+
+            		 	{% set num = 0 %}
+            		{%if (video.categoria.id == categoria.id) and ( num<2 ) %}
+            		<div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+            		<h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+            		{% set num= num+1 %}
+            		
+					{% endif %}
+
+				{% endfor %}	
+ 			</header>
+
+{% endfor %}
+           
+{% endblock %} 
