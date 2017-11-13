@@ -64,5 +64,18 @@ public function InicioAction()
 
 	}
 
+	public function show_catAction($id)
+	{
+		
+	$categoria = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->find($id);
+	
+	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
+
+
+	
+	return $this->render('BloggerBlogBundle:Blog:show_categoria.html.twig', array('categoria' => $categoria, 'videos' => $videos));
+
+	}
+
 }
 ?>

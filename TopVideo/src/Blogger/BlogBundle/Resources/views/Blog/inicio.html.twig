@@ -6,20 +6,32 @@
 
  {% for categoria in categorias %}
         <article class="categoria">
+       
            
             <header>
             	<h3>{{categoria.nombre}}</h3>
+
+                  {% set num = 0 %}
             	{% for video in videos %}
+                             
 
-            		 	{% set num = 0 %}
-            		{%if (video.categoria.id == categoria.id) and ( num<2 ) %}
-            		<div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
-            		<h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
-            		{% set num= num+1 %}
-            		
-					{% endif %}
+            		{%if (video.categoria.id == categoria.id) %}
+                       
+                        {%if ( num<2 ) %}
+                              {% set num = num + 1 %}
 
+            		    <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+
+            		    <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+
+
+				{% endif %}
+                        {% endif %}
+
+                   
+                        
 				{% endfor %}	
+                        <p class="continue"><a href=" {{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">Ver más...</a></p>
  			</header>
 
 {% endfor %}

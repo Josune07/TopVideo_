@@ -19,3 +19,9 @@ blogger_blog_list_plat:
     path: /plataformas
     defaults: { _controller: BloggerBlogBundle:Blog:list_plat }
 
+blogger_blog_show_categoria:
+    path: /show_cat/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:show_cat }
+
+
+

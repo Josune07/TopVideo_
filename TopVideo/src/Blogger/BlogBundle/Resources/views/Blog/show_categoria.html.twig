@@ -1,0 +1,36 @@
+{# src/Blogger/BlogBundle/Resources/views/Blog/show.html.twig #}
+{% extends "::layout.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+
+	
+           
+{% block body %}
+ <header>
+	<h3>{{categoria.nombre}}</h3>
+	<ul>
+		
+		{% for video in videos %}
+                             
+
+            		{%if (video.categoria.id == categoria.id) %}
+                       
+
+
+            		    <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+
+            		    <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+
+            		     {% endif %}
+
+                   
+       	{% endfor %}	
+       	</header>
+{% endblock %}
+
+	
+			
