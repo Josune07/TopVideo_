@@ -12,5 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class PlatafomaRepository extends EntityRepository
 {
+
+	public function getLatestPlats($limit = null)
+{
+	$qp = $this->createQueryBuilder('p')->select('p')->addOrderBy('p.nombre', 'DESC');
+
+	if (false === is_null($limit))
+		$qp->setMaxResults($limit);
+
+	return $qp->getQuery()->getResult();
+}
 	
 }

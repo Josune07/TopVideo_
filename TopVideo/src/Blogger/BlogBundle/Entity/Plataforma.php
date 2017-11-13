@@ -37,6 +37,12 @@ class Plataforma
 
     private $videos;
 
+
+ /**
+    * @ORM\Column(type="text")
+    */
+    protected $imagen;
+
       /**
      * Get id
      *
@@ -115,5 +121,28 @@ class Plataforma
     public function getVideos()
     {
         return $this->videos;
+    }
+
+    /**
+     * Set imagen
+     *
+     * @param string $imagen
+     * @return Plataforma
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return string 
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
     }
 }

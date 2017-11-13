@@ -37,6 +37,12 @@ class Plataforma
 
     private $videos;
 
+
+ /**
+    * @ORM\Column(type="text")
+    */
+    protected $imagen;
+
       /**
      * Get id
      *

@@ -1,0 +1,30 @@
+{# src/Blogger/BlogBundle/Resources/views/Blog/list_plataformas.html.twig #}
+{% extends "::base.html.twig" %}
+{% block title %}Lista de Plataformas {% endblock %}
+
+{% block body %}
+
+    <h3>Plataformas</h3>
+    
+    {% for plat in plats %}
+        <article class="plataforma">
+
+            <header>
+                <h2><br>{{plat.nombre}}</br></h2>
+                <img src="{{asset(plat.imagen) }}" alt="imagen" />
+                <p>Esta plataforma tiene ... videos.</p>
+              
+
+            </header>
+         
+           
+        
+           
+            <footer class="meta">
+                <p>Comentarios: -</p>
+            </footer>
+        </article>
+    {% else %}
+        <p>No hay entradas en este blog</p>
+    {% endfor %}
+{% endblock %}

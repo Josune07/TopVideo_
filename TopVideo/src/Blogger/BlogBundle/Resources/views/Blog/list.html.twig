@@ -3,9 +3,13 @@
 {% block title %}Lista de Videos{% endblock %}
 
 {% block body %}
+
+    <h3>Todos los Videos</h3>
+    
     {% for video in videos %}
         <article class="video">
-            <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+
+            <div class="date"><br><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></br></div>
             <header>
                 <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
                 <p>{{ video.cantante }}</p>

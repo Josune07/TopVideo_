@@ -14,12 +14,12 @@ class VideoRepository extends EntityRepository
 {
 
 	public function getLatestVideos($limit = null)
-{
-	$qp = $this->createQueryBuilder('v')->select('v')->addOrderBy('v.date', 'DESC');
+	{
+		$qp = $this->createQueryBuilder('v')->select('v')->addOrderBy('v.date', 'DESC');
 
-	if (false === is_null($limit))
-		$qp->setMaxResults($limit);
+		if (false === is_null($limit))
+			$qp->setMaxResults($limit);
 
-	return $qp->getQuery()->getResult();
-}
+		return $qp->getQuery()->getResult();
+	}
 }

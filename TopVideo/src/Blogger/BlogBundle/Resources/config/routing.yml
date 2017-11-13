@@ -15,3 +15,7 @@ blogger_blog_init:
     path:  /init
     defaults: { _controller: BloggerBlogBundle:Blog:inicio }
 
+blogger_blog_list_plat:
+    path: /plataformas
+    defaults: { _controller: BloggerBlogBundle:Blog:list_plat }
+
