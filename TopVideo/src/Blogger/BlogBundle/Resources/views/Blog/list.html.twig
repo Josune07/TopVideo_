@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <h3>Todos los Videos</h3>
+    <h4>Todos los Videos</h4>
     
     {% for video in videos %}
         <article class="video">
@@ -13,7 +13,7 @@
             <header>
                 <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
                 <p>{{ video.cantante }}</p>
-                <iframe width="560" height="315" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
+<iframe width="500" height="315" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
               
 
             </header>

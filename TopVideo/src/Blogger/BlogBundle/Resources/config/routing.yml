@@ -23,5 +23,11 @@ blogger_blog_show_categoria:
     path: /show_cat/{id}
     defaults: { _controller: BloggerBlogBundle:Blog:show_cat }
 
+blogger_comment_create:
+    path:  /comentario/{video_id}
+    defaults: { _controller: BloggerBlogBundle:Comentario:create }
+    requirements:
+        _method: GET
+        post_id: \d+
 
 

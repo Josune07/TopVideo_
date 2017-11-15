@@ -1,8 +1,0 @@
-{# src/Blogger/BlogBundle/Resources/views/Comment/form.html.twig #}
-
-<form action="{{ path('blogger_comment_create', { 'video_id' : comentario.video.id } ) }}" method="post" {{ form_enctype(form) }} class="blogger">
-    {{ form_widget(form) }}
-    <p>
-        <input type="submit" value="Enviar">
-    </p>
-</form>
