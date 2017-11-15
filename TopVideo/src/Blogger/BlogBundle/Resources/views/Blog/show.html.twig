@@ -10,14 +10,14 @@
 
 	
 {% block body %}
-	<h1>Informacion sobre el video</h1>
+	<h4>Informacion sobre el video</h4>
 	<ul>
 		
 		<li><h2>{{ video.titulo }}</h2></li>
 		<li><h2>{{ video.cantante }}</h2></li>
 		<li><h2>{{ video.date|date('d-m-Y') }}</h2></li>
 
-		<li>{{ video.letra}}</li>
+		<li><pre>{{ video.letra}}</pre></li>
 
 		<li><h2> Categoria:{{ categoria.nombre }}</h2></li>
 
@@ -39,6 +39,12 @@
 
 		
 		
+
+
+<a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><span class="logo_colour"><img src="{{asset('icon/insta.png') }}" alt=" like" /></span></a>
+
+
+ <h3> Tiene {{megusta}}s "me gustas"
 
 {% endblock %}
 
