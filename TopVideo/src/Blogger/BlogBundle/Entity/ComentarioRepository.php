@@ -22,4 +22,8 @@ class ComentarioRepository extends EntityRepository
 
 		return $qp->getQuery()->getResult();
 	}
+
+
+	
+
 }

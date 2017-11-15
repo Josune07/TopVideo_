@@ -4,6 +4,7 @@
 {% block stylesheets %}
 {{ parent() }}
 <link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+
 {% endblock %}
 
 
@@ -20,6 +21,22 @@
 
 	<iframe width="500" height="280" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
 
+		<section class="comentarios" id="comentarios">
+			<section class="previous-comentarios">
+				<h3>Comentarios</h3>
+				{% include 'BloggerBlogBundle:Comentario:list.html.twig' with { 'comentarios': comentarios } %}
+			</section>
+		</section>
+
+		<section class="comentarios" id="comentarios">
+			<section class="previous-comentarios">
+				 <h3>Añadir comentario</h3>
+		        {{ render(controller( 'BloggerBlogBundle:Comentario:new', { 'video_id': video.id } )) }}
+		    </section>
+		</section>
+
+		
+		
 
 
 <a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><span class="logo_colour"><img src="{{asset('icon/insta.png') }}" alt=" like" /></span></a>
@@ -30,6 +47,7 @@
  <li><pre>{{ video.letra}}</pre></li>
 
 {% endblock %}
+
 
 	
 			

@@ -204,4 +204,21 @@ class Comentario
     {
         return $this->video;
     }
+
+     public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+
+        $this->setApproved(true);
+    }
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('user', new NotBlank(array('message' => 'Debes indicar tu nombre')));
+        $metadata->addPropertyConstraint('comentario', new NotBlank(array('message' => 'Debes escribir tu comentario')));
+    }
+
+
+
 }

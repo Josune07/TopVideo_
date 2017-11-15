@@ -122,4 +122,27 @@ class Plataforma
     {
         return $this->videos;
     }
+
+    /**
+     * Set imagen
+     *
+     * @param string $imagen
+     * @return Plataforma
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return string 
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
 }

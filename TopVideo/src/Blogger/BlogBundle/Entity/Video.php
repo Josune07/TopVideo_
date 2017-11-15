@@ -357,4 +357,9 @@ class Video
     {
         return $this->link;
     }
+
+    public function __toString()
+    {
+        return $this->getTitulo();
+    }
 }

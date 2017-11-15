@@ -23,6 +23,14 @@ blogger_blog_show_categoria:
     path: /show_cat/{id}
     defaults: { _controller: BloggerBlogBundle:Blog:show_cat }
 
+<<<<<<< HEAD
+blogger_comment_create:
+    path:  /comentario/{video_id}
+    defaults: { _controller: BloggerBlogBundle:Comentario:create }
+    requirements:
+        _method: GET
+        post_id: \d+
+=======
 blogger_like_create:
     path:  /like/{video_id}
     defaults: { _controller: BloggerBlogBundle:MeGusta:create }
@@ -30,5 +38,6 @@ blogger_like_create:
         _method: POST|GET
   
 
+>>>>>>> cdf0767a12a3cae9bc23a74c00b6ea1a3d65577a
 
 
