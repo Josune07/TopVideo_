@@ -4,6 +4,7 @@
 {% block stylesheets %}
 {{ parent() }}
 <link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+
 {% endblock %}
 
 
@@ -22,8 +23,23 @@
 
 		<<iframe width="560" height="315" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
 
+		<section class="comentario" id="comentario">
+			<section class="previous-comentario">
+				<h3>Comentarios</h3>
+				{% include 'BloggerBlogBundle:Comment:list.html.twig' with { 'comentarios': comentarios } %}
+			</section>
+		</section>
+			<section class="comentario" id="comentario">
+			<section class="previous-comentario">
+				 <h3>Añadir comentario</h3>
+		        {{ render(controller( 'BloggerBlogBundle:Comment:new', { 'video_id': video.id } )) }}
+		    </section>
+		</section>
+
+		
 
 {% endblock %}
+
 
 	
 			

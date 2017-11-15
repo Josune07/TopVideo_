@@ -1,0 +1,12 @@
+{# src/Blogger/BlogBundle/Resources/views/Comment/list.html.twig #}
+
+{% for comentario in comentarios %}
+    <article class="comentario {{ cycle(['odd', 'even'], loop.index0) }}" id="comentario-{{ comentario.id }}">
+        <header>
+            <p><span class="highlight">{{ comentario.user }}</span> comentó el <time datetime="{{ comentario.created|date('c') }}">{{ comentario.created|date('l, F j, Y') }}</time></p>
+        </header>
+        <p>{{ comentario.comentario }}</p>
+    </article>
+{% else %}
+    <p>No hay comentarios para este video. Se el primero en comentar...</p>
+{% endfor %}
