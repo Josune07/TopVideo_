@@ -9,7 +9,7 @@
 
 	
 {% block body %}
-	<h1>Informacion sobre el video</h1>
+	<h4>Informacion sobre el video</h4>
 	<ul>
 		
 		<li><h2>{{ video.titulo }}</h2></li>
@@ -22,6 +22,12 @@
 
 		<<iframe width="560" height="315" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
 
+
+
+<a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><span class="logo_colour"><img src="{{asset('icon/insta.png') }}" alt=" like" /></span></a>
+
+
+ <h3> Tiene {{megusta}}s "me gustas"
 
 {% endblock %}
 

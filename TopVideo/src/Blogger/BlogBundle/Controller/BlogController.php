@@ -27,10 +27,11 @@ class BlogController extends Controller
 		$comentarios = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Comentario')->getComentariosForVideo($video->getId());
 
 		$categoria = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->find($video->getCategoria());
+		$megusta = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMeGustasForVideo($video->getId());
 
 	
 
-	return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('video' => $video, 'comentarios' => $comentarios,'categoria' => $categoria ));
+	return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('video' => $video, 'comentarios' => $comentarios,'categoria' => $categoria, 'megusta' => $megusta ));
 	}
 
 

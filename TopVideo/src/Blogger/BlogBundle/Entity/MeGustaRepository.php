@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class MeGustaRepository extends EntityRepository
 {
+
+public function getMeGustasForVideo($videoId)
+	{
+		$qp = $this->createQueryBuilder('m')->select('count(m.id)')->where('m.video = :video_id')->setParameter('video_id', $videoId);
+
+		return $qp->getQuery()->getSingleScalarResult();
+	}
+
 }

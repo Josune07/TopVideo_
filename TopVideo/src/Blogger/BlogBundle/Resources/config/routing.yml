@@ -23,5 +23,12 @@ blogger_blog_show_categoria:
     path: /show_cat/{id}
     defaults: { _controller: BloggerBlogBundle:Blog:show_cat }
 
+blogger_like_create:
+    path:  /like/{video_id}
+    defaults: { _controller: BloggerBlogBundle:MeGusta:create }
+    requirements:
+        _method: POST|GET
+  
+
 
 
