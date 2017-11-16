@@ -53,7 +53,7 @@ class Video
      * @ORM\JoinTable(name="videos_plataforma")
 
      */
-     private $plataforma;
+     private $plataformas;
 
 
     /**
@@ -356,5 +356,10 @@ class Video
     public function getLink()
     {
         return $this->link;
+    }
+
+    public function __toString()
+    {
+        return $this->getTitulo();
     }
 }

@@ -8,7 +8,7 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
 #wrapper span.highlight { color: #F48A00; }
 
 #header { border-bottom: 1px solid #ccc; margin-bottom: 20px; }
-#header .top { background-color: #F5F5F1; border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+#header .top { background-color: #F5F5F1; margin-bottom: 10px; }
 #header ul.navigation { list-style: none; text-align: right; }
 #header .navigation li { display: inline }
 #header .navigation li a { display: inline-block; padding: 10px 15px; border-left: 1px solid #ccc; }
@@ -23,7 +23,8 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
 .main-col h1,
 .main-col h2
     { line-height: 1.2em; font-size: 32px; font-weight: bold ; margin-bottom: 10px; font-weight: normal; color: #F48A00; }
-.main-col p { line-height: 1.5em; margin-bottom: 20px; }
+.main-col p { line-height: 1.5em; margin-bottom: 20px;}
 .main-col h4{ line-height: 1.2em; font-size: 60px; font-weight: bold ; text-decoration: underline; border-bottom: medium solid #610B38;  margin-bottom: 10px; font-weight: normal; color: #F48A00; }
-
+.main-col h5 { line-height: 1.5em; margin-bottom: 20px;text-decoration: underline}
 #footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
+.main-col hr { height: 10px; background-color: black; }

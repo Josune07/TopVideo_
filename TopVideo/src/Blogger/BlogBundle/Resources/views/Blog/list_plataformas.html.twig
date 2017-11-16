@@ -11,9 +11,9 @@
 
             <header>
                 <h2><br>{{plat.nombre}}</br></h2>
-                <img src="{{asset(plat.imagen) }}" alt="imagen" />
-                <p>Esta plataforma tiene ... videos.</p>
-              
+               <br><img src="{{asset(plat.imagen) }}" alt="imagen" /></br>
+               
+               <p>Esta plataforma contiene {{plat.getNumberofVideos }} videos</p>
 
             </header>
          
@@ -22,6 +22,9 @@
                 <p>Comentarios: -</p>
             </footer>
         </article>
+
+          <hr></hr>
+    
     {% else %}
         <p>No hay entradas en este blog</p>
     {% endfor %}

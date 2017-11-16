@@ -14,14 +14,25 @@
 	<ul>
 		
 		<li><h2>{{ video.titulo }}</h2></li>
-		<li><h2>{{ video.cantante }}</h2></li>
-		<li><h2>{{ video.date|date('d-m-Y') }}</h2></li>
+		<li><h3>{{ video.cantante }}</h3></li>
+		<li><h3>{{ video.date|date('d-m-Y') }}</h3></li>
 
-		<li><h2> Categoria:{{ categoria.nombre }}</h2></li>
+		<li><h3> Categoria:{{ categoria.nombre }}</h3></li>
 
 	<iframe width="500" height="280" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
 
-		<section class="comentarios" id="comentarios">
+		
+
+<br><a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><img src="{{asset('icon/liike.png') }}" alt=" like"/><a></br>
+
+
+ <br><h3> Tiene {{megusta}}s "me gustas"<a></h3>
+
+ <br><li><pre>{{ video.letra}}</pre></li></br>
+
+<hr><hr>
+
+ <section class="comentarios" id="comentarios">
 			<section class="previous-comentarios">
 				<h3>Comentarios</h3>
 				{% include 'BloggerBlogBundle:Comentario:list.html.twig' with { 'comentarios': comentarios } %}
@@ -38,13 +49,6 @@
 		
 		
 
-
-<a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><span class="logo_colour"><img src="{{asset('icon/insta.png') }}" alt=" like" /></span></a>
-
-
- <h3> Tiene {{megusta}}s "me gustas"
-
- <li><pre>{{ video.letra}}</pre></li>
 
 {% endblock %}
 

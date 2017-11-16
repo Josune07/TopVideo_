@@ -31,7 +31,7 @@ class Plataforma
 
     /**
 
-    * @ORM\ManyToMany(targetEntity="Video", mappedBy="Plataformas")
+    * @ORM\ManyToMany(targetEntity="Video", mappedBy="plataformas")
 
     */
 
@@ -145,4 +145,15 @@ class Plataforma
     {
         return $this->imagen;
     }
+
+    public function getNumberofVideos()
+    {
+         $videos = new ArrayCollection;
+        $videos= $this-> getVideos();
+            return count($videos);
+    }
+
+
 }
+
+

@@ -53,7 +53,7 @@ class Video
      * @ORM\JoinTable(name="videos_plataforma")
 
      */
-     private $plataforma;
+     private $plataformas;
 
 
     /**
@@ -361,5 +361,15 @@ class Video
     public function __toString()
     {
         return $this->getTitulo();
+    }
+
+    /**
+     * Get plataformas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlataformas()
+    {
+        return $this->plataformas;
     }
 }
