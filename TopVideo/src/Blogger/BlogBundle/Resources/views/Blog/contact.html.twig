@@ -1,7 +1,8 @@
 {# src/Blogger/BlogBundle/Resources/views/Blog/contact.html.twig #}
-{% extends 'BloggerBlogBundle::layout.html.twig' %}
+{% extends "::layout.html.twig" %}
 
-{% block title %}Contact{% endblock%}
+
+{% block title%}Contact{% endblock %}
 
 {% block body %}
     <header>
@@ -10,7 +11,20 @@
 
     <p>Puedes encontrarme en las siguientes redes sociales:</p>
 	<ul>
-		<li><a href="https://twitter.com/claorden" target="_blank">Twitter</a></li>
-		<li><a href="https://www.linkedin.com/in/claorden" target="_blank">LinkedIn</a></li>
+		<li><a href="https://facebook.com/josune.ordonez.1" target="_blank"> <img src="{{asset('icon/face.png') }}" alt="Facebook" /></a></li>
+		<li><a href="https://facebook.com/josune.ordonez.1" target="_blank"> <img src="{{asset('icon/insta.png') }}" alt="Instagram" /></a></li>
+		<li><a href="https://facebook.com/josune.ordonez.1" target="_blank"> <img src="{{asset('icon/linkedin.png') }}" alt="Linkedin" /></a></li>
+		<li><a href="https://facebook.com/josune.ordonez.1" target="_blank"> <img src="{{asset('icon/twitter.png') }}" alt="Twitter" /></a></li>
 	</ul>
+
 {% endblock %}
+
+{% block sidebar_%}
+{% endblock %}
+
+
+{% block sidebar%}
+  <img src="{{asset('img/Foto_Perfil_.jpeg') }}" alt="Josune!" />
+{% endblock %}
+       
+

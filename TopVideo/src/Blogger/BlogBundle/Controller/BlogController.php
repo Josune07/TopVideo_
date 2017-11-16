@@ -60,10 +60,8 @@ public function InicioAction()
 	{
 		
 	$plats = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Plataforma')->getLatestPlats();
-	
-	
-	
-	return $this->render('BloggerBlogBundle:Blog:list_plataformas.html.twig', array('plats' => $plats));
+	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
+	return $this->render('BloggerBlogBundle:Blog:list_plataformas.html.twig', array('plats' => $plats, 'videos'=> $videos));
 
 	}
 

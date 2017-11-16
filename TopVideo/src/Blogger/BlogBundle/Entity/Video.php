@@ -40,7 +40,7 @@ class Video
     protected $letra;
 
   /**
-     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="Videos")
+     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="videos")
      * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
 

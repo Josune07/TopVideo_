@@ -9,8 +9,8 @@
        
            
            
-            	<h4>{{categoria.nombre}}</h4>
-
+            	<h4><a href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{{categoria.nombre}}</a></h4>
+                   <p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s): </p> 
                   {% set num = 0 %}
             	{% for video in videos %}
                              

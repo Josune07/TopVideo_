@@ -17,11 +17,17 @@
 
             </header>
          
-            
+    {% for video in plat.videos %}
+               <ul>
+               <li type="circle">{{ video.titulo }}</li>
+               </ul>
+    {% endfor %}
+
             <footer class="meta">
                 <p>Comentarios: -</p>
             </footer>
         </article>
+
 
           <hr></hr>
     

@@ -29,7 +29,7 @@ class Categoria
 
 
     /**
- * @ORM\OneToMany(targetEntity="Video", mappedBy="Categoria")
+ * @ORM\OneToMany(targetEntity="Video", mappedBy="categoria")
  */
     protected $videos;
 
@@ -138,5 +138,14 @@ class Categoria
     public function getVideos()
     {
         return $this->videos;
+    }
+
+    public function getNumOfVideos()
+    {
+
+    $videos = new ArrayCollection;
+    $videos= $this-> getVideos();
+    return count($videos);
+
     }
 }
