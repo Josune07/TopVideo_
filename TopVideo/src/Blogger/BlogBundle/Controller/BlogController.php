@@ -11,8 +11,8 @@ class BlogController extends Controller
 	{
 		
 	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
-	
-	return $this->render('BloggerBlogBundle:Blog:list.html.twig', array('videos' => $videos));
+	$plataformas = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Plataforma')->getLatestPlats();
+	return $this->render('BloggerBlogBundle:Blog:list.html.twig', array('videos' => $videos,'plataformas' => $plataformas ));
 
 	}
 

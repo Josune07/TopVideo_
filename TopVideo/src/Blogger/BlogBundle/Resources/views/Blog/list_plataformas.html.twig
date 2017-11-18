@@ -19,13 +19,11 @@
          
     {% for video in plat.videos %}
                <ul>
-               <li type="circle">{{ video.titulo }}</li>
+               <li type="circle"><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}"> {{ video.titulo }}</a></li>
                </ul>
     {% endfor %}
 
-            <footer class="meta">
-                <p>Comentarios: -</p>
-            </footer>
+           
         </article>
 
 

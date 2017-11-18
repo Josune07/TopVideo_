@@ -3,6 +3,7 @@
 namespace Blogger\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Blogger\BlogBundle\Entity\Video
  *
@@ -372,4 +373,12 @@ class Video
     {
         return $this->plataformas;
     }
+
+     public function getNumberofPlataformas()
+    {
+         $plats = new ArrayCollection;
+        $plats= $this-> getPlataformas();
+            return count($plats);
+    }
+
 }

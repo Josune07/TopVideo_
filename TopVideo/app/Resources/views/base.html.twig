@@ -13,6 +13,7 @@
               <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
             <link href="{{ asset('css/screen_11.css') }}" type="text/css" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -45,7 +46,7 @@
                 {% block body %}{% endblock %}
             </section>
             <aside class="sidebar">
-                {% block sidebar %}{% endblock %}
+                {% block sidebar %} {% endblock %}
             </aside>
 
             <div id="footer">

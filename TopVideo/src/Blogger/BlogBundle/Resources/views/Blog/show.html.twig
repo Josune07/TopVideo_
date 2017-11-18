@@ -19,6 +19,17 @@
 
 		<li><h3> Categoria:{{ categoria.nombre }}</h3></li>
 
+		<br><p>Este video esta disponible en {{video.getNumberofPlataformas }} plataformas :</p></br>
+		       
+    {% for plataforma in video.plataformas %}
+               <ul>
+               <li type="circle"><a href="{{ path('blogger_blog_list_plat', { 'id': plataforma.id }) }}"> {{ plataforma.nombre }}</a></li>
+               </ul>
+    {% endfor %}
+
+
+
+
 	<iframe width="500" height="280" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
 
 		
