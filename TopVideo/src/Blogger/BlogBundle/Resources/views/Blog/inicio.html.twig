@@ -4,37 +4,40 @@
 
 {% block body %}
 
+ <article class="categoria">
+       
  {% for categoria in categorias %}
-        <article class="categoria">
        
            
-           
-            	<h4><a href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{{categoria.nombre}}</a></h4>
-                   <p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s): </p> 
+  <h4><a href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{{categoria.nombre}}</a></h4>
+                   
+  <p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s): </p> 
                   {% set num = 0 %}
-            	{% for video in videos %}
+            	
+    {% for video in videos %}
                              
-
-            		{%if (video.categoria.id == categoria.id) %}
+    	{%if (video.categoria.id == categoria.id) %}
                        
-                        {%if ( num<2 ) %}
-                              {% set num = num + 1 %}
+          {%if ( num<2 ) %}
+             {% set num = num + 1 %}
 
-            		    <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+             <div class="date"><p><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></p></div>
 
-            		    <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}"> {{ video.titulo }}</a></h2>
+             <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}"> {{ video.titulo }}</a></h2>
 
 
 				{% endif %}
-                        {% endif %}
+      {% endif %}
 
                    
                         
-				{% endfor %}	
-                        <p class="continue"><a href=" {{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">Ver más...</a></p>
+		{% endfor %}	
+      <p class="continue"><a href=" {{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">Ver más...</a></p>
  			
 
 {% endfor %}
+
+      </article>
            
 {% endblock %} 
 

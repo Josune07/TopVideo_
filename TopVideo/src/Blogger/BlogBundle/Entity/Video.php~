@@ -381,11 +381,5 @@ class Video
     }
 
 
-    /**
-     * Set num_likes
-     *
-     * @param integer $numLikes
-     * @return Video
-     */
-   
+    
 }

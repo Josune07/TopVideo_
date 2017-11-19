@@ -6,11 +6,12 @@
 <h2> Ranking de los videos con más likes: </h2>
 
  {% set num = 1 %}
-{% for m in likes %}
 
+{% for m in likes %}
+				<ol>
         {% for video in videos %}
             {% if m.1 == video.id  %}  
-            	<ol id='lista1'>
+            	
                  <li value={{num}}><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo}}</a> con {{m.total}} me gustas </li>
                  </ol>
                 

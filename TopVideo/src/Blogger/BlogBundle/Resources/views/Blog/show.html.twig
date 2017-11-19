@@ -11,46 +11,47 @@
 	
 {% block body %}
 	<h4>Informacion sobre el video</h4>
-	<ul>
+	
 		
-		<li><h2>{{ video.titulo }}</h2></li>
-		<li><h3>{{ video.cantante }}</h3></li>
-		<li><h3>{{ video.date|date('d-m-Y') }}</h3></li>
+		<h2>{{ video.titulo }}</h2>
+		<h2><a href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}"> Categoria:{{ categoria.nombre }}</h2><br>
+		<h3>{{ video.cantante }}</h3>
+		<h3>{{ video.date|date('d-m-Y') }}</h3>
 
-		<li><h3> Categoria:{{ categoria.nombre }}</h3></li>
+		
 
-		<br><p>Este video esta disponible en {{video.getNumberofPlataformas }} plataformas :</p></br>
+		<p>Este video esta disponible en {{video.getNumberofPlataformas }} plataformas :</p>
 		       
     {% for plataforma in video.plataformas %}
                <ul>
-               <li type="circle"><a href="{{ path('blogger_blog_list_plat', { 'id': plataforma.id }) }}"> {{ plataforma.nombre }}</a></li>
+               <li><a href="{{ path('blogger_blog_list_plat', { 'id': plataforma.id }) }}"> {{ plataforma.nombre }}</a></li>
                </ul>
     {% endfor %}
 
 
 
 
-	<iframe width="500" height="280" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
+	<br><iframe width="500" height="280" src="{{video.link}}" allowfullscreen></iframe><br>
 
 		
 
-<br><a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><img src="{{asset('icon/liike.png') }}" alt=" like"/><a></br>
+<a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><img src="{{asset('icon/liike.png') }}" alt=" like"/></a><br>
 
 
- <br><h3> Tiene {{megusta}}s "me gustas"<a></h3>
+<h3> Tiene {{megusta}}s "me gustas"</h3><br>
 
- <br><li><pre>{{ video.letra}}</pre></li></br>
+ <pre>{{ video.letra}}</pre><br>
 
-<hr><hr>
+<hr>
 
- <section class="comentarios" id="comentarios">
+ <section class="comentarios" >
 			<section class="previous-comentarios">
 				<h3>Comentarios</h3>
 				{% include 'BloggerBlogBundle:Comentario:list.html.twig' with { 'comentarios': comentarios } %}
 			</section>
 		</section>
 
-		<section class="comentarios" id="comentarios">
+		<section class="comentarios">
 			<section class="previous-comentarios">
 				 <h3>Añadir comentario</h3>
 		        {{ render(controller( 'BloggerBlogBundle:Comentario:new', { 'video_id': video.id } )) }}

@@ -1,18 +1,18 @@
-<!-- app/Resources/views/base.html.twig -->
 <!DOCTYPE html>
-<html>
+<!-- app/Resources/views/base.html.twig -->
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
-        <title>{% block title %}Proyecto{% endblock %} - Todo Video</title>
+        <meta charset="utf-8" />
+        <title>{% block title %} Proyecto{% endblock %} - Todo Video</title>
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         {% block stylesheets %}
-            <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
+         
             <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
-              <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-            <link href="{{ asset('css/screen_11.css') }}" type="text/css" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+            <link href="{{ asset('css/screen_11.css') }}" type="text/css" rel="stylesheet" />
+            
 
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
@@ -35,11 +35,10 @@
                     {% endblock %}
                 </div>
 
-                <hgroup>
-                    <h2>{% block blog_title %}<a href="#">TopVideo</a>{% endblock %}</h2>
-                    <h3>{% block blog_tagline %}<a href="#">toda la información sobre tus videos favoritos</a>{% endblock %}</h3>
-                </hgroup>
-            </top>
+              
+                    <h2>{% block blog_title %}TopVideo{% endblock %}</h2>
+                    <h3>{% block blog_tagline %}toda la información sobre tus videos favoritos{% endblock %}</h3>
+          
             </header>
 
             <section class="main-col">
@@ -51,7 +50,7 @@
 
             <div id="footer">
                 {% block footer %}
-                    Blog en Symfony2 - creado por <a href=" "">Josune Ordoñez y Andrea Morillas</a>, con la ayuda de <a href="https://github.com/dsyph3r">dsyph3r</a>
+                    Blog en Symfony2 - creado por <a href=" ">Josune Ordoñez y Andrea Morillas</a>
                 {% endblock %}
             </div>
         </section>

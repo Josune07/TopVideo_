@@ -3,33 +3,32 @@
 {% block title %}Lista de Plataformas {% endblock %}
 
 {% block body %}
-
+  <article class="plataforma">
     <h4>Plataformas</h4>
     
     {% for plat in plats %}
-        <article class="plataforma">
-
-            <header>
-                <h2><br>{{plat.nombre}}</br></h2>
-               <br><img src="{{asset(plat.imagen) }}" alt="imagen" /></br>
+        
+        <h2>{{plat.nombre}}<br></h2>
+        <img src="{{asset(plat.imagen) }}" alt="imagen" /><br>
                
-               <p>Esta plataforma contiene {{plat.getNumberofVideos }} videos</p>
+        <p>Esta plataforma contiene {{plat.getNumberofVideos }} videos</p>
 
-            </header>
+        
          
     {% for video in plat.videos %}
-               <ul>
-               <li type="circle"><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}"> {{ video.titulo }}</a></li>
-               </ul>
+        <ul>
+        <li><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}"> {{ video.titulo }}</a></li>
+       </ul>
     {% endfor %}
 
            
-        </article>
+       
 
 
-          <hr></hr>
+          <hr>
     
     {% else %}
         <p>No hay entradas en este blog</p>
     {% endfor %}
+    </article>
 {% endblock %}

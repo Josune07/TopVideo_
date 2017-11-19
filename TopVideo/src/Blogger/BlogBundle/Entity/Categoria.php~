@@ -34,10 +34,7 @@ class Categoria
     protected $videos;
 
 
-    /**
-    * @ORM\Column(type="integer")
-    */
-   public $num_videos;
+   
     /**
      * Get id
      *

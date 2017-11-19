@@ -3,31 +3,30 @@
 {% block title %}Lista de Videos{% endblock %}
 
 {% block body %}
-
-    <h4>Todos los Videos</h4>
+    <article class="video">
+        <h4>Todos los Videos</h4>
     
     {% for video in videos %}
-        <article class="video">
-
-            <div class="date"><br><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></br></div>
-            <header>
-                <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
-                <p>{{ video.cantante }}</p>
-<iframe width="500" height="315" src="{{video.link}}" frameborder="0" allowfullscreen></iframe>
-              
-
-            </header>
+        
+        <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time><br></div>
+    
+    
+        <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+         <p>{{ video.cantante }}</p>
+        <iframe width="500" height="315" src="{{video.link}}"  allowfullscreen></iframe>
+       
 
             <div class="snippet">
                 <p>{{ video.letra(200) }}</p>
-                <h5><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">Seguir leyendo...</a><h5>
+                <h5><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">Seguir leyendo...</a></h5>
             </div>
 
             <footer class="meta">
                 <p>Comentarios: -</p>
             </footer>
-        </article>
     {% else %}
         <p>No hay entradas en este blog</p>
     {% endfor %}
+
+     </article>
 {% endblock %}
