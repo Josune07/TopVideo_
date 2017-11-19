@@ -3,6 +3,7 @@
 namespace Blogger\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Blogger\BlogBundle\Entity\Video
  *
@@ -40,7 +41,7 @@ class Video
     protected $letra;
 
   /**
-     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="Videos")
+     * @ORM\ManyToOne(targetEntity="Categoria", inversedBy="videos")
      * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
 
@@ -70,7 +71,6 @@ class Video
     * @ORM\Column(type="text")
     */
     protected $link;
-
 
 
 
@@ -362,4 +362,30 @@ class Video
     {
         return $this->getTitulo();
     }
+
+    /**
+     * Get plataformas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlataformas()
+    {
+        return $this->plataformas;
+    }
+
+     public function getNumberofPlataformas()
+    {
+         $plats = new ArrayCollection;
+        $plats= $this-> getPlataformas();
+            return count($plats);
+    }
+
+
+    /**
+     * Set num_likes
+     *
+     * @param integer $numLikes
+     * @return Video
+     */
+   
 }

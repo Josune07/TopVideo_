@@ -12,14 +12,17 @@ class BlogController extends Controller
 		
 	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
 	$plataformas = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Plataforma')->getLatestPlats();
-	return $this->render('BloggerBlogBundle:Blog:list.html.twig', array('videos' => $videos,'plataformas' => $plataformas ));
+	$likes = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMostLikedVideos();
+	return $this->render('BloggerBlogBundle:Blog:list.html.twig', array('videos' => $videos,'plataformas' => $plataformas,'likes' => $likes ));
+	
+	
 
 	}
 
 	public function showAction($id)
 	{
 		$video = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->find($id);
-	
+		$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
 		if (!$video) {
 					throw $this->createNotFoundException('No se ha encontrado el video.');
 					}
@@ -28,10 +31,10 @@ class BlogController extends Controller
 
 		$categoria = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->find($video->getCategoria());
 		$megusta = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMeGustasForVideo($video->getId());
-
+		$likes = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMostLikedVideos();
 	
 
-	return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('video' => $video, 'comentarios' => $comentarios,'categoria' => $categoria, 'megusta' => $megusta ));
+	return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('video' => $video, 'comentarios' => $comentarios,'categoria' => $categoria, 'megusta' => $megusta ,'likes' => $likes,'videos' => $videos ));
 	}
 
 
@@ -49,9 +52,9 @@ public function InicioAction()
 
 	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
 
-
+	$likes = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMostLikedVideos();
 	
-	return $this->render('BloggerBlogBundle:Blog:inicio.html.twig', array('categorias' => $categorias, 'videos' => $videos));
+	return $this->render('BloggerBlogBundle:Blog:inicio.html.twig', array('categorias' => $categorias, 'videos' => $videos,'likes' => $likes));
 
 
 	}
@@ -61,7 +64,9 @@ public function InicioAction()
 		
 	$plats = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Plataforma')->getLatestPlats();
 	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
-	return $this->render('BloggerBlogBundle:Blog:list_plataformas.html.twig', array('plats' => $plats, 'videos'=> $videos));
+	$likes = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMostLikedVideos();
+
+	return $this->render('BloggerBlogBundle:Blog:list_plataformas.html.twig', array('plats' => $plats, 'videos'=> $videos,'likes' => $likes));
 
 	}
 
@@ -71,10 +76,10 @@ public function InicioAction()
 	$categoria = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->find($id);
 	
 	$videos = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->getLatestVideos();
-
+	$likes = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:MeGusta')->getMostLikedVideos();
 
 	
-	return $this->render('BloggerBlogBundle:Blog:show_categoria.html.twig', array('categoria' => $categoria, 'videos' => $videos));
+	return $this->render('BloggerBlogBundle:Blog:show_categoria.html.twig', array('categoria' => $categoria, 'videos' => $videos,'likes' => $likes));
 
 	}
 

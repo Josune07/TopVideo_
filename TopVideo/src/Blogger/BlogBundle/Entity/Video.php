@@ -76,7 +76,6 @@ class Video
 
 
 
-
     /**
      * Get id
      *
@@ -381,4 +380,12 @@ class Video
             return count($plats);
     }
 
+
+    /**
+     * Set num_likes
+     *
+     * @param integer $numLikes
+     * @return Video
+     */
+   
 }

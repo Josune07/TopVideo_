@@ -20,4 +20,12 @@ public function getMeGustasForVideo($videoId)
 		return $qp->getQuery()->getSingleScalarResult();
 	}
 
+public function getMostLikedVideos()
+	{
+		$qp = $this->createQueryBuilder('m')->select('IDENTITY (m.video)','count(m.id) as total')->groupBy('m.video')->addOrderBy('total','DESC');
+
+		return $qp->getQuery()->getResult();
+	}
+
+
 }
