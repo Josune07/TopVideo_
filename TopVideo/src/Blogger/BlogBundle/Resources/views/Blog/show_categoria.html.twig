@@ -1,19 +1,18 @@
-{# src/Blogger/BlogBundle/Resources/views/Blog/show.html.twig #}
+{# src/Blogger/BlogBundle/Resources/views/Blog/show_categoria.html.twig #}
 {% extends "::layout.html.twig" %}
 
 {% block stylesheets %}
 {{ parent() }}
-<link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+
 {% endblock %}
 
 
 	
            
 {% block body %}
- <header>
+
 	<h4>{{categoria.nombre}}</h4>
-	<ul>
-		
+	
 		{% for video in videos %}
                              
 
@@ -32,7 +31,6 @@
        	{% endfor %}	
  		<p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s)</p>	
 
-       	</header>
 
 
 {% endblock %}
