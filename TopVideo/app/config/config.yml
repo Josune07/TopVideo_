@@ -70,6 +70,8 @@ swiftmailer:
     spool: { type: memory }
 
 easy_admin:
+    design:
+        brand_color: '#FADBD8'
     entities:
         #- Blogger\BlogBundle\Entity\Video
         Categoria:
@@ -106,5 +108,62 @@ easy_admin:
                 title: 'Crear Nuevo Me Gusta'
                 fields:
                   - { property: 'video', type_options: { 'by_reference': false } }
+
+        Plataforma:
+            class:  Blogger\BlogBundle\Entity\Plataforma
+            label:  'Plataforma'
+            list:
+                title: "Lista de Plataformas"
+                fields:
+                  - 'id'
+                  - 'nombre'
+                  - 'videos'
+                  - 'imagen'
+            form:
+                fields:
+                  - 'nombre'
+                  - 'videos'
+                  - 'imagen'
+            new:
+                title: 'Crear Nueva Plataforma'
+                fields:
+                  - 'nombre'  
+                  - { property: 'videos', type_options: { 'by_reference': false } }
+                  - { property: 'imagen', type: 'string'}
+
+        Video:
+            class:  Blogger\BlogBundle\Entity\Video
+            label:  'Video'
+            list:
+                title: "Lista de Videos"
+                fields:
+                  - 'id'
+                  - 'titulo'
+                  - 'cantante'
+                  - 'date'
+                  - 'letra'
+                  - 'categoria'
+                  - 'plataformas'
+                  - 'link'
+            form:
+                fields:
+                  - 'titulo'
+                  - 'cantante'
+                  - 'date'
+                  - 'letra'
+                  - 'categoria'
+                  - 'plataformas'
+                  - 'link'
+            new:
+                title: 'Crear Nuevo Video'
+                fields:
+                  - 'titulo'
+                  - 'cantante'
+                  - { property: 'date', type: 'date'}
+                  - 'letra'  
+                  - { property: 'categoria', type_options: { 'by_reference': false } }
+                  - { property: 'plataformas', type_options: { 'by_reference': false } }
+                  - { property: 'link', type: 'url'}
+
         
   
