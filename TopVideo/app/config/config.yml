@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@BloggerBlogBundle/Resources/config/services.yml" }
+    - { resource: "@BloggerAdminBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -12,6 +13,7 @@ parameters:
 framework:
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: [en] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -22,7 +24,8 @@ framework:
     #serializer: { enable_annotations: true }
     templating:
         engines: ['twig','php']
-    default_locale: '%locale%'
+    #default_locale: '%locale%'
+    default_locale: es
     trusted_hosts: ~
     trusted_proxies: ~
     session:
@@ -65,3 +68,43 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+easy_admin:
+    entities:
+        #- Blogger\BlogBundle\Entity\Video
+        Categoria:
+            class:  Blogger\BlogBundle\Entity\Categoria
+            label: 'Categorias'
+            list:
+                title: "Lista de Categorias"
+                fields:
+                  - 'id'
+                  - 'nombre'
+                  - 'videos'
+            form:
+                fields:
+                  - 'nombre'
+                  - 'videos'
+            new:
+                title: 'Crear Nueva Categoria'
+                fields:
+                  - 'nombre'
+                  - { property: 'videos', type_options: { 'by_reference': false } }
+
+        MeGusta:
+            class:  Blogger\BlogBundle\Entity\MeGusta
+            label: 'Me Gustas'
+            list:
+                title: "Lista de Me Gustas"
+                fields:
+                  - 'id'
+                  - 'video'
+            form:
+                fields:
+                  - 'video'
+            new:
+                title: 'Crear Nuevo Me Gusta'
+                fields:
+                  - { property: 'video', type_options: { 'by_reference': false } }
+        
+  
