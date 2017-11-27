@@ -35,6 +35,11 @@ blogger_like_create:
     defaults: { _controller: BloggerBlogBundle:MeGusta:create }
     requirements:
         _method: POST|GET
+
+blogger_blog_show_ajax:
+    path: /show_ajax/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:show_ajax }
+  
   
 
 

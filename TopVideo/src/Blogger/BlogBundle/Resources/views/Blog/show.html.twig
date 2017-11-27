@@ -1,10 +1,19 @@
 {# src/Blogger/BlogBundle/Resources/views/Blog/show.html.twig #}
 {% extends "::layout.html.twig" %}
 
+{% block javascripts %} 
+  <script src ="/js/jquery.js" type="text/javascript" ></script>
+  <script src ="/js/scriptShow.js" type="text/javascript" ></script>
+  <script src ="/js/jquery.qtip-1.0.0-rc3.min.js" type="text/javascript" ></script>
+ 
+{% endblock %}
+
+
+
+
 {% block stylesheets %}
 {{ parent() }}
 <link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
-
 {% endblock %}
 
 
@@ -35,7 +44,7 @@
 
 		
 
-<a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><img src="{{asset('icon/liike.png') }}" alt=" like"/></a><br>
+<a href="{{ path('blogger_like_create', { 'video_id': video.id }) }}"><img id="megusta" src="{{asset('icon/liike.png') }}" alt=" like"/></a><br>
 
 
 <h3> Tiene {{megusta}}s "me gustas"</h3><br>
@@ -58,11 +67,9 @@
 		    </section>
 		</section>
 
-		
-		
-
-
 {% endblock %}
+
+
 
 
 	

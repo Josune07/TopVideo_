@@ -83,5 +83,15 @@ public function InicioAction()
 
 	}
 
+
+	public function show_ajaxAction($id)
+	{
+		$video = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Video')->find($id);
+		
+
+	return $this->render('BloggerBlogBundle:Blog:show_ajax.html.twig', array('video' => $video));
+	}
+
+	
 }
 ?>
