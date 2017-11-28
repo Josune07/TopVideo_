@@ -71,7 +71,7 @@ swiftmailer:
 
 easy_admin:
     design:
-        brand_color: '#FADBD8'
+        brand_color: '#900C3F'
     entities:
         #- Blogger\BlogBundle\Entity\Video
         Categoria:
@@ -124,13 +124,12 @@ easy_admin:
                   - 'nombre'
                   - 'videos'
                   - 'imagen'
-            new:
-                title: 'Crear Nueva Plataforma'
-                fields:
-                  - 'nombre'  
-                  - { property: 'videos', type_options: { 'by_reference': false } }
-                  - { property: 'imagen', type: 'string'}
-
+           # new:
+               # title: 'Crear Nueva Plataforma'
+                #fields:
+                 # - 'nombre'  
+                 # - { property: 'videos', type_options: { 'by_reference': false } }
+                 # - { property: 'imagen', type: 'string'}
         Video:
             class:  Blogger\BlogBundle\Entity\Video
             label:  'Video'

@@ -1,9 +1,16 @@
 {# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
 {% extends '::base.html.twig' %}
 
+
+
+ 
+
+
 {% block sidebar %}
 
-<h2> Ranking de los videos con más likes: </h2>
+<article class="ranking">
+
+<h2><strong> Ranking de los videos con más likes: </h2>
 
  {% set num = 1 %}
 
@@ -21,5 +28,5 @@
 
     {% endfor %}
 
-
+</article>
 {% endblock %}

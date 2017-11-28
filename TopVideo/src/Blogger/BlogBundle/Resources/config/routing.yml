@@ -15,6 +15,10 @@ blogger_blog_init:
     path:  /init
     defaults: { _controller: BloggerBlogBundle:Blog:inicio }
 
+blogger_blog_show_categoria_ajax:
+    path:  /show_cat_ajax/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:show_cat_ajax }
+
 blogger_blog_list_plat:
     path: /plataformas
     defaults: { _controller: BloggerBlogBundle:Blog:list_plat }

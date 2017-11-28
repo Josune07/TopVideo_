@@ -18,7 +18,7 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
 
 .main-col { border-right: 1px; border-left: 1px;  min-height: 700px; width: 600px; display: inline-block; float: left; border-right: 1px solid #ccc; padding: 20px; margin-bottom: 20px; }
 
-.sidebar h2 {line-height: 1.2em; font-size: 32px; font-weight: bold ; margin-bottom: 10px; font-weight: normal; color: #610B38;}
+.sidebar h2 {line-height: 1.2em; font-size: 32px; margin-bottom: 10px; font-weight: bold; color: #610B38;}
 .main-col a { color: #F48A00; }
 .main-col h1,
 .main-col h2

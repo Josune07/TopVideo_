@@ -92,6 +92,15 @@ public function InicioAction()
 	return $this->render('BloggerBlogBundle:Blog:show_ajax.html.twig', array('video' => $video));
 	}
 
+	public function show_cat_ajaxAction($id)
+	{
+		$categoria = $this->get('doctrine')->getManager()->getRepository('BloggerBlogBundle:Categoria')->find($id);
+		
+
+	return $this->render('BloggerBlogBundle:Blog:show_cat_ajax.html.twig', array('categoria' => $categoria));
+	}
+
+
 	
 }
 ?>

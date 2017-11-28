@@ -1,6 +1,13 @@
 {# src/Blogger/BlogBundle/Resources/views/Blog/inicio.html.twig #}
 {% extends "::layout.html.twig" %}
 
+{% block javascripts %} 
+  <script src ="/js/jquery.js" type="text/javascript" ></script>
+  <script src ="/js/scriptInicio.js" type="text/javascript" ></script>
+  <script src ="/js/jquery.qtip-1.0.0-rc3.min.js" type="text/javascript" ></script>
+ 
+{% endblock %}
+
 
 {% block body %}
 
@@ -9,7 +16,7 @@
  {% for categoria in categorias %}
        
            
-  <h4><a href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{{categoria.nombre}}</a></h4>
+  <h4><a class= "cat" href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{{categoria.nombre}}</a></h4>
                    
   <p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s): </p> 
                   {% set num = 0 %}
