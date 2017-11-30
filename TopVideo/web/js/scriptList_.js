@@ -1,14 +1,17 @@
 $(document).ready(function() {
 
+
   $(".single-item").slick({
+
   dots: true
 });
+  
 
-  $('h4>.cat').each(function()
+  $('h2>.titulo').each(function()
   {
 
     href = $(this).attr('href');
-    href = href.replace("cat", "cat_ajax");
+    href = href.replace("show", "show_ajax");
    
     $(this).qtip(
 
@@ -29,3 +32,4 @@ $(document).ready(function() {
 
 
 });
+

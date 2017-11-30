@@ -4,12 +4,19 @@
 {% block title %}Lista de Videos{% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/jquery.qtip-1.0.0-rc3.min.js"></script>
+    
+    
+    <script type="text/javascript" src="/js/jquery.js"></script> 
     <script type="text/javascript" src="/js/scriptList.js"></script>
+    <script type="text/javascript" src="/js/jquery.qtip-1.0.0-rc3.min.js"></script>
+    
+                
+ {% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('css/slick.css') }}" type="text/css" rel="stylesheet" />
 
  {% endblock %}
-
 
 
 
@@ -18,26 +25,24 @@
         <h4>Todos los Videos</h4>
     
     {% for video in videos %}
-        
-        <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time><br></div>
     
+        <section>
+        <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time><br></div>
     
         <h2><a class="titulo" href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
          <p>{{ video.cantante }}</p>
         <iframe width="500" height="315" src="{{video.link}}"  allowfullscreen></iframe>
-       
-
+        
             <div class="snippet">
                 <p>{{ video.letra(200) }}</p>
                 <h5><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">Seguir leyendo...</a></h5>
             </div>
 
-            <footer class="meta">
-                <p>Comentarios: -</p>
-            </footer>
-    {% else %}
-        <p>No hay entradas en este blog</p>
+        </section>
+
     {% endfor %}
+
+   
 
      </article>
 {% endblock %}

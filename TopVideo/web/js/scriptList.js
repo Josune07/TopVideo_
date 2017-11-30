@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
   $('h2>.titulo').each(function()
   {
 
@@ -19,6 +21,10 @@ $(document).ready(function() {
       hide: 'mouseout'});
 
 });
+
+
+
+
 
 });
 
