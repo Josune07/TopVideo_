@@ -27,7 +27,9 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
   text-align: center;
   background: white;
 }
-.sidebar h2 {line-height: 1.2em; font-size: 32px; margin-bottom: 10px; font-weight: bold; color: #610B38;}
+.sidebar h2 {line-height: 1.2em; font-size: 32px;  margin-top: 60px; margin-bottom: 10px; margin-left: 10px; font-weight: bold; color: #610B38;}
+.sidebar h3 {line-height: 1.2em; font-size: 20px; margin-bottom: 10px;  margin-left: 10px; color: #610B38;}
+#primeralinea {margin-top: 50px;}
 .main-col a { color: #F48A00; }
 .main-col h1,
 .main-col h2

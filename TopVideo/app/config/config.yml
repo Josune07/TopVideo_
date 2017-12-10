@@ -107,7 +107,7 @@ easy_admin:
             new:
                 title: 'Crear Nuevo Me Gusta'
                 fields:
-                  - { property: 'video', type_options: { 'by_reference': false } }
+                  - { property: 'video', type_options: { 'expanded': false } }
 
         Plataforma:
             class:  Blogger\BlogBundle\Entity\Plataforma
@@ -160,9 +160,9 @@ easy_admin:
                   - 'cantante'
                   - { property: 'date', type: 'date'}
                   - 'letra'  
-                  - { property: 'categoria', type_options: { 'by_reference': false } }
+                  - { property: 'categoria', type_options: { 'expanded': false } } 
                   - { property: 'plataformas', type_options: { 'by_reference': false } }
-                  - { property: 'link', type: 'url'}
+                  - 'link'
 
         
   

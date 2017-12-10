@@ -3,7 +3,27 @@
 
 
 
+ {% block javascripts %}
+ {{parent()}}
+<script src ="/js/scriptSideBar.js" type="text/javascript" ></script>
+  
+
+ {% endblock %}
+
+
+{% block upsidebar %}
+
+<div class= "ventanas">
+
+<h3 id= "primeralinea"><span><a href="{{ path('blogger_blog_init')}}">Inicio</a></span></h3>
+<h3><span>Plataformas</span></h3>
+<h3><span>Todos los videos</span></h3>
+<h3><span>Contacto</span></h3>
+
+
+</div>
  
+{% endblock %}
 
 
 {% block sidebar %}
@@ -29,4 +49,5 @@
     {% endfor %}
 
 </article>
+
 {% endblock %}

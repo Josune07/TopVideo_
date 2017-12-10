@@ -13,6 +13,7 @@ security:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    josune: { password: josune14, roles: ['ROLE_ADMIN'] }
 
 
     firewalls:
