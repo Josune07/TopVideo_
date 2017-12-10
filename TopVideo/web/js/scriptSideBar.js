@@ -8,4 +8,6 @@ $(".ventanas>h3>span").hover(
 			$(this).css("background-color", "white");
 		}
 	);
+
+
 });

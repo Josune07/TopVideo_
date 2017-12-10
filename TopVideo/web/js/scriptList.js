@@ -20,8 +20,14 @@ $(document).ready(function() {
       show: 'mouseover',
       hide: 'mouseout'});
 
-});
+   });
+  
 
+$('#ordenar').hover(function()
+{
+function mostrar(){
+document.getElementById('oculto').style.display = 'inline';}
+}
 
 
 

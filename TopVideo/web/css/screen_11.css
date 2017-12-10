@@ -16,7 +16,8 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
 #header h2 a {color: #F48A00;  }
 #header h3 { text-align: center; font-family: 'La Belle Aurore', cursive; font-size: 24px; margin-bottom: 20px; font-weight: normal; color: #F48A00;}
 
-.main-col { border-right: 1px; border-left: 1px;  min-height: 700px; width: 600px; display: inline-block; float: left; border-right: 1px solid #ccc; padding: 20px; margin-bottom: 20px; }
+.main-col { border-right: 1px; border-left: 1px;  min-height: 700px; width: 60%; float: left;display: inline-block; float: left; border-right: 1px solid #ccc; padding: 20px; margin-bottom: 20px; }
+
 .container {
   margin: 0 auto;
   padding: 10px;
@@ -27,9 +28,15 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
   text-align: center;
   background: white;
 }
-.sidebar h2 {line-height: 1.2em; font-size: 32px;  margin-top: 60px; margin-bottom: 10px; margin-left: 10px; font-weight: bold; color: #610B38;}
-.sidebar h3 {line-height: 1.2em; font-size: 20px; margin-bottom: 10px;  margin-left: 10px; color: #610B38;}
-#primeralinea {margin-top: 50px;}
+
+.sidebar h2 {line-height: 1.2em; font-size: 28px; margin-bottom: 10px; margin-left: 10px; font-weight: bold; color: #610B38;}
+.sidebar h3 {line-height: 1.2em; font-size: 18px; margin-bottom: 10px;  margin-left: 20px; color: #610B38;}
+#primeralinea {margin-top: 110px;}
+#ultimalinea {margin-bottom: 30px;}
+.sidebar .ventanas {position: relative;
+    left: 20px;}
+ .sidebar .ranking {position: relative;
+    left: 20px;} 
 .main-col a { color: #F48A00; }
 .main-col h1,
 .main-col h2
@@ -41,11 +48,50 @@ body {line-height: 1;font-family: 'Poiret One', sans-serif;font-size: 30px; widt
 #footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
 .main-col hr { height: 8px; background-color: black; }
 .main-col li{ list-style: circle; font-size: 20px;list-style-position: inside; }
-.sidebar ol {  position: relative ;list-style: decimal; font: 20px 'Poiret One';margin-left: 10em;list-style-position: inside; }
+.sidebar ol {  position: relative ;list-style: decimal; font: 20px 'Poiret One';margin-left: 10em;list-style-position: inside; text-align: center; }
 .sidebar li a { color: #F48A00; }
+
+.ventanas ul {display: none;}
 
 #megusta { -webkit-transition: all 1s ease;
 -moz-transition: all 1s ease;
 -ms-transition: all 1s ease;
 transition: all 1s ease; }
 
+
+.main-col .col-1 {width: 50%; float: left;
+}
+.main-col .col-2 {width: 50%; float: right;
+ }
+
+
+
+
+.slick-dots,.slick-next,.slick-prev{position:absolute;display:block;padding:0}
+.slick-dots li button:before,
+.slick-next:before,
+.slick-prev:before{font-family:slick;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.slick-loading .slick-list{background:url(ajax-loader.gif) center center no-repeat #fff}
+.slick-next,.slick-prev{font-size:0;line-height:0;top:50%;width:20px;height:20px;margin-top:-10px\9;-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);transform:translate(0,-50%);cursor:pointer;color:transparent;border:none;outline:0;background:0 0}
+.slick-next:focus,.slick-next:hover,.slick-prev:focus,.slick-prev:hover{color:transparent;outline:0;background:0 0}
+.slick-next:focus:before,.slick-next:hover:before,.slick-prev:focus:before,.slick-prev:hover:before{opacity:1}
+.slick-next.slick-disabled:before,.slick-prev.slick-disabled:before{opacity:.25}
+.slick-next:before,.slick-prev:before{font-size:20px;line-height:1;opacity:.75;color:#fff}
+.slick-prev{left:-25px}[dir=rtl] 
+.slick-prev{right:-25px;left:auto}
+.slick-prev:before{content:'â†'}
+.slick-next:before,[dir=rtl] 
+.slick-prev:before{content:'â†’'}
+.slick-next{right:-25px}[dir=rtl]
+.slick-next{right:auto;left:-25px}[dir=rtl] 
+.slick-next:before{content:'â†'}
+.slick-slider{margin-bottom:30px}
+.slick-dots{bottom:-45px;width:100%;list-style:none;text-align:center; size:15px;}
+.slick-dots li{position:relative;display:inline-block;width:20px;height:20px;margin:0 5px;padding:0;cursor:pointer}
+.slick-dots li button{font-size:0;line-height:0;display:block;width:20px;height:20px;padding:5px;cursor:pointer;color:transparent;border:0;outline:0;background:0 0}
+.slick-dots li button:focus,
+.slick-dots li button:hover{outline:0}
+.slick-dots li button:focus:before,
+.slick-dots li button:hover:before{opacity:1}
+.slick-dots li button:before{font-size:40px;line-height:20px;position:absolute;top:0;left:0;width:20px;height:20px;content:'.';text-align:center;opacity:.25;color:#000}
+.slick-dots li.slick-active button:before{opacity:.75;color:#000}

@@ -18,7 +18,7 @@
 <h3 id= "primeralinea"><span><a href="{{ path('blogger_blog_init')}}">Inicio</a></span></h3>
 <h3><span>Plataformas</span></h3>
 <h3><span>Todos los videos</span></h3>
-<h3><span>Contacto</span></h3>
+<h3  id="ultimalinea"> <span>Contacto</span></h3>
 
 
 </div>
@@ -30,7 +30,9 @@
 
 <article class="ranking">
 
-<h2><strong> Ranking de los videos con más likes: </h2>
+  <hr>
+
+<h2><strong> TOP 3 </h2>
 
  {% set num = 1 %}
 
@@ -38,12 +40,16 @@
 				<ol>
         {% for video in videos %}
             {% if m.1 == video.id  %}  
+
+            {% if num < 4 %}
             	
                  <li value={{num}}><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo}}</a> con {{m.total}} me gustas </li>
                  </ol>
-                
+            
+            
                {% set num = num +1 %}
             {% endif %}
+               {% endif %}
         {% endfor %}
 
     {% endfor %}

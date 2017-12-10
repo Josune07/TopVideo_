@@ -4,43 +4,53 @@
 {% block title %}Lista de Videos{% endblock %}
 
 {% block javascripts %}
-    
-    
-    <script type="text/javascript" src="/js/jquery.js"></script> 
-    <script type="text/javascript" src="/js/scriptList.js"></script>
-    <script type="text/javascript" src="/js/jquery.qtip-1.0.0-rc3.min.js"></script>
-    
 
-    
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/scriptList.js"></script>
+<script type="text/javascript" src="/js/jquery.qtip-1.0.0-rc3.min.js"></script>
                 
  {% endblock %}
-{% block stylesheets %}
-{{ parent() }}
-<link href="{{ asset('css/slick.css') }}" type="text/css" rel="stylesheet" />
-
- {% endblock %}
-
 
 
 {% block body %}
-    <article class="video">
+
+ {% set num = 1 %}
+
+    
         <h4>Todos los Videos</h4>
     
     {% for video in videos %}
-    
-        <section>
+        {% if num == 1%}
+    <div class ="col-1">
+
+         <section>
         <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time><br></div>
     
         <h2><a class="titulo" href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
          <p>{{ video.cantante }}</p>
-        <iframe width="500" height="315" src="{{video.link}}"  allowfullscreen></iframe>
+        <iframe width="250" height="158"  src="{{video.link}}"  allowfullscreen></iframe>
         
-            <div class="snippet">
-                <p>{{ video.letra(200) }}</p>
-                <h5><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">Seguir leyendo...</a></h5>
-            </div>
+            
 
         </section>
+    </div>
+     {% set num = 2 %}
+    
+    {% else %}
+ <div class ="col-2">
+
+         <section>
+        <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time><br></div>
+    
+        <h2><a class="titulo" href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+         <p>{{ video.cantante }}</p>
+        <iframe width="250" height="158" src="{{video.link}}"  allowfullscreen></iframe>
+        
+        </section>
+    </div>
+     {% set num = 1 %}
+    {% endif %}
+
 
     {% endfor %}
 
@@ -48,3 +58,21 @@
 
      </article>
 {% endblock %}
+
+
+{% block upsidebar %}
+
+
+{{parent()}}
+<div class= "ventanas">
+<h3 id="ordenar"><span>Ordenar</span></h3>
+    
+    <ul id="oculto">
+
+        <li>Por nombre</li>
+        <li>Por fecha</li>
+        <li>Por me gustas</li>
+  </ul>
+</div>
+{% endblock %}
+
