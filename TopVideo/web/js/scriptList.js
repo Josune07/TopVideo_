@@ -1,14 +1,15 @@
-$(document).ready(function() {
+ // var $jQuery = $.noConflict(true);
+jQuery(document).ready(function() {
 
 
 
-  $('h2>.titulo').each(function()
+  jQuery('h2>.titulo').each(function()
   {
 
-    href = $(this).attr('href');
+    href = jQuery(this).attr('href');
     href = href.replace("show", "show_ajax");
    
-    $(this).qtip(
+    jQuery(this).qtip(
 
     {
 		 content: { 
@@ -22,15 +23,6 @@ $(document).ready(function() {
 
    });
   
-
-$('#ordenar').hover(function()
-{
-function mostrar(){
-document.getElementById('oculto').style.display = 'inline';}
-}
-
-
-
 
 });
 

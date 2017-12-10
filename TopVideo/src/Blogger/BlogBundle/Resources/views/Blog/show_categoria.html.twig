@@ -3,34 +3,52 @@
 
 {% block stylesheets %}
 {{ parent() }}
-
 {% endblock %}
 
+
+{% block javascripts %}
+{{ parent() }}
+
+{% endblock %}
 
 	
            
 {% block body %}
 
 	<h4>{{categoria.nombre}}</h4>
-	
+	{% set num = 2 %}
 		{% for video in videos %}
                              
 
-            		{%if (video.categoria.id == categoria.id) %}
+            	{%if (video.categoria.id == categoria.id) %}
                        
-
+            		{% if num == 1%}
+            		 <div class ="col-1">
 
             		    <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
 
             		    <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
 
-            		    <br><iframe width="500" height="280" src="{{video.link}}" allowfullscreen></iframe><br>
+            		    <br><iframe width="250" height="158" src="{{video.link}}" allowfullscreen></iframe><br>
 
 
-            		     {% endif %}
+            		   </div>
+     				   {% set num = 2 %}
+     				{% else %}
+     				 <div class ="col-2">
+
+            		    <div class="date"><time datetime="{{ video.date|date('c') }}">{{ video.date|date('l, F j, Y') }}</time></div>
+
+            		    <h2><a href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
+
+            		    <br><iframe width="250" height="158" src="{{video.link}}" allowfullscreen></iframe><br>
 
 
-                   
+            		   </div>
+     				   {% set num = 1 %}
+
+     				{% endif %} 
+     			{% endif %}               
        	{% endfor %}	
  		<p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s)</p>	
 

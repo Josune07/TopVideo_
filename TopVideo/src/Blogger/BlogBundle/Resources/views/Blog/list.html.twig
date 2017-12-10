@@ -5,7 +5,9 @@
 
 {% block javascripts %}
 
-<script type="text/javascript" src="/js/jquery.js"></script>
+{{parent()}}
+
+<script type="text/javascript" src="/js/jquery.js" ></script>
 <script type="text/javascript" src="/js/scriptList.js"></script>
 <script type="text/javascript" src="/js/jquery.qtip-1.0.0-rc3.min.js"></script>
                 
@@ -14,10 +16,8 @@
 
 {% block body %}
 
- {% set num = 1 %}
-
-    
-        <h4>Todos los Videos</h4>
+ {% set num = 2 %}
+ <h4>Todos los Videos</h4>
     
     {% for video in videos %}
         {% if num == 1%}
@@ -44,7 +44,7 @@
     
         <h2><a class="titulo" href="{{ path('blogger_blog_show', { 'id': video.id }) }}">{{ video.titulo }}</a></h2>
          <p>{{ video.cantante }}</p>
-        <iframe width="250" height="158" src="{{video.link}}"  allowfullscreen></iframe>
+        <iframe width="250" height="158" src="{{video.link}}" allowfullscreen></iframe>
         
         </section>
     </div>

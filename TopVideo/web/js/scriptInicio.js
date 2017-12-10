@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
   $(".single-item").slick({
-  dots: true
+  dots: true,
+  slidesToShow: 2,
+  slidesToScroll: 1
 });
 
   $('h4>.cat').each(function()
