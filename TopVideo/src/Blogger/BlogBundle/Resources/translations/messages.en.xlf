@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+            <body>
+            <trans-unit id="1">
+                <source>INICIO</source>
+                <target>MAIN PAGE</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>TODOS LOS VIDEOS</source>
+                <target>ALL VIDEOS</target>
+            </trans-unit>
+             <trans-unit id="3">
+                <source>PLATAFORMAS</source>
+                <target>PLATAFORMS</target>
+            </trans-unit>
+             <trans-unit id="4">
+                <source>CONTACTO</source>
+                <target>CONTACT</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>toda la información sobre tus videos favoritos</source>
+                <target>your favourite videos!</target>
+            </trans-unit>
+             <trans-unit id="6">
+                <source>Esta categoria tiene</source>
+                <target>This category has </target>
+            </trans-unit>
+             <trans-unit id="7">
+                <source>Ver más</source>
+                <target>See more</target>
+            </trans-unit>
+             <trans-unit id="8">
+                <source>Contacta con nosotras</source>
+                <target>Contact with us</target>
+            </trans-unit>
+             <trans-unit id="9">
+                <source>Gracias por visitar nuestro blog!</source>
+                <target>Thanks for visiting our blog!</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Si quieres puedes encontrarnos en las siguientes redes sociales</source>
+                <target>You can find us in the following social networks</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Dale a Me Gusta ;) </source>
+                <target>Like me !</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

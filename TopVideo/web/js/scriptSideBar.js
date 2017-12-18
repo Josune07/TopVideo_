@@ -1,11 +1,23 @@
 $(document).ready(function() {
 
-$(".ventanas>h3>span").hover(
+
+
+$("a").hover(
 		function () {
-		        $(this).css("background-color",  "#fadbd8" );
+		        $(this).css("color",  " #1abc9c" );
 		}, 
 		function () {
-			$(this).css("background-color", "white");
+			$(this).css("color", " #610B38");
+		}
+	);
+
+
+$(".navigation>li>a").hover(
+		function () {
+		        $(this).css("color",  "#fadbd8" );
+		}, 
+		function () {
+			$(this).css("color", " #610B38");
 		}
 	);
 

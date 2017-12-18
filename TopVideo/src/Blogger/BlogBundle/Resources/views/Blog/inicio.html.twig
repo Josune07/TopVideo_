@@ -22,7 +22,7 @@
           
   <h4><a class= "cat" href="{{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{{categoria.nombre}}</a></h4>
                  
-  <p> Esta categoria tiene {{categoria. getNumOfVideos}} video(s): </p> 
+  <p>{% trans %}Esta categoria tiene{% endtrans %}{{categoria. getNumOfVideos}} video(s): </p> 
                   {% set num = 0 %}
       <div class="single-item">      	
     {% for video in videos %}
@@ -44,7 +44,7 @@
 
     {% endfor %}	
      </div>
-      <p class="continue"><a href=" {{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">Ver más...</a></p>
+      <p class="continue"><a href=" {{ path('blogger_blog_show_categoria', { 'id': categoria.id }) }}">{% trans %}Ver más{% endtrans %}...</a></p>
  			
 
 {% endfor %}

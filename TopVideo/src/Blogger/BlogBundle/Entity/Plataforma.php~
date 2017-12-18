@@ -154,4 +154,9 @@ class Plataforma
     }
 
 
+ public function __toString()
+    {
+        return $this->getNombre();
+    }
+
 }

@@ -32,6 +32,12 @@ class MeGustaController extends Controller
             return $this->render('BloggerBlogBundle::show.html.twig', array('like' => $like));
     }
 
+    public function create_ajaxAction()
+    {
+        
+         return $this->render('BloggerBlogBundle:Blog:dale.html.twig');
+    }
+
     protected function getVideo($video_id)
     {
         $em = $this->getDoctrine()->getManager();

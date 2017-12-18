@@ -219,6 +219,10 @@ class Comentario
         $metadata->addPropertyConstraint('comentario', new NotBlank(array('message' => 'Debes escribir tu comentario')));
     }
 
+ public function __toString()
+    {
+        return $this->getId();
+    }
 
 
 }

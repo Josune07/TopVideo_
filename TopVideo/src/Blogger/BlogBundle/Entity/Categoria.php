@@ -145,4 +145,11 @@ class Categoria
     return count($videos);
 
     }
+
+
+
+     public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

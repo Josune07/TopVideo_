@@ -14,7 +14,7 @@
             <link href="{{ asset('css/screen_11.css') }}" type="text/css" rel="stylesheet" />
            <link href="{{ asset('css/slick-theme.min.css') }}" type="text/css" rel="stylesheet" />
             <link href="{{ asset('css/slick.min.css') }}" type="text/css" rel="stylesheet" />
-           <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> t"> 
+           <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/> 
 
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,20 +27,18 @@
         <section id="wrapper">
             <header id="header">
             
-
               
                     <h2>{% block blog_title %}TopVideo{% endblock %}</h2>
-                    <h3>{% block blog_tagline %}toda la información sobre tus videos favoritos{% endblock %}</h3>
+                    <h3>{% block blog_tagline %}{% trans %}toda la información sobre tus videos favoritos{% endtrans %}{% endblock %}</h3>
  
-   
                     <div class="top">
                     {% block navigation %}
                         <nav>
                             <ul class="navigation">
-                                <li><a href="{{ path('blogger_blog_init')}}">INICIO</a></li>
-                                <li><a href="{{ path('blogger_blog_list')}}">TODOS LOS VIDEOS</a></li>
-                                <li><a href="{{ path('blogger_blog_list_plat')}}">PLATAFORMAS</a></li>
-                                <li><a href="{{ path('blogger_blog_contact')}}">CONTACTO</a></li>
+                                <li><a href="{{ path('blogger_blog_init')}}">{% trans %}INICIO{% endtrans %}</a></li>
+                                <li><a href="{{ path('blogger_blog_list')}}">{% trans %}TODOS LOS VIDEOS{% endtrans %}</a></li>
+                                <li><a href="{{ path('blogger_blog_list_plat')}}">{% trans %}PLATAFORMAS{% endtrans %}</a></li>
+                                <li><a href="{{ path('blogger_blog_contact')}}">{% trans %}CONTACTO{% endtrans %}</a></li>
 
                             </ul>
                         </nav>
@@ -70,7 +68,7 @@
     <script src ="/js/jquery-2.2.min.js" type="text/javascript" ></script>
     <script type="text/javascript" src="/js/jquery.pin.min.js"></script>
     <script src ="/js/slick.min.js" type="text/javascript" ></script>
-
+<script src ="/js/scriptSideBar.js" type="text/javascript" ></script>
 
  {% endblock %}
     </body>

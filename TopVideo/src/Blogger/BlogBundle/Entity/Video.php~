@@ -73,7 +73,16 @@ class Video
     protected $link;
 
 
+ /**
+     * Convert to String
+     *
+     * 
+     */
 
+  public function __toString()
+    {
+        return $this->getTitulo();
+    }
 
 
     /**
@@ -200,6 +209,7 @@ class Video
     {
         $this->categoria[] = $categoria;
 
+
         return $this;
     }
 
@@ -232,7 +242,7 @@ class Video
     public function addPlataforma(\Blogger\BlogBundle\Entity\Plataforma $plataforma)
     {
         $this->plataforma[] = $plataforma;
-
+        $plataforma->addVideo($this);
         return $this;
     }
 
@@ -244,6 +254,7 @@ class Video
     public function removePlataforma(\Blogger\BlogBundle\Entity\Plataforma $plataforma)
     {
         $this->plataforma->removeElement($plataforma);
+        $plataforma->removeVideo($this);
     }
 
     /**
@@ -358,11 +369,7 @@ class Video
         return $this->link;
     }
 
-    public function __toString()
-    {
-        return $this->getTitulo();
-    }
-
+   
     /**
      * Get plataformas
      *
@@ -380,6 +387,8 @@ class Video
             return count($plats);
     }
 
+
+   
 
     
 }
